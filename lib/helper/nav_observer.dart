@@ -6,10 +6,12 @@ class NavObserver extends NavigatorObserver {
   static NavObserver instance = NavObserver();
   static var navKey = GlobalKey<NavigatorState>();
 
+
   @override
   void didPush(Route route, Route? previousRoute) {
     if(route.settings.name!=null&&route.settings.name!.isNotEmpty) {
       routeHistory.add(route);
+
     }
     super.didPush(route, previousRoute);
   }

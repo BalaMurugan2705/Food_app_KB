@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'helper/nav_helper.dart';
+import 'helper/nav_observer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Food App',
+      navigatorObservers: [NavObserver.instance],
+      navigatorKey: NavObserver.navKey,
       theme: ThemeData(
         // This is the theme of your application.
         //
