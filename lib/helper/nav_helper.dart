@@ -2,12 +2,14 @@ import 'dart:collection';
 
 import 'package:flutter/material.dart';
 import 'package:food_app_2/Screen/splashscreen.dart';
+import 'package:food_app_2/Screen/wlecome_screen.dart';
 
 import 'nav_observer.dart';
 
 
 const String landingRoute = "/landingRoute";
 const String route = "/";
+const String welcome = "/welcome";
 
 
 
@@ -20,6 +22,10 @@ Route<Object?>? getRoute(String? name, {LinkedHashMap? args}) {
     case route:
       return MaterialPageRoute(
           builder: (context) => const SplashScreen(),
+          settings: RouteSettings(name: name));
+    case welcome:
+      return MaterialPageRoute(
+          builder: (context) => const WelcomeScreen(),
           settings: RouteSettings(name: name));
 
   }
